@@ -24,7 +24,7 @@ import { trigger,style,transition,animate,query,stagger  } from '@angular/animat
   ]
 })
 export class PostsComponent implements OnInit {
-  posts: Object;
+  posts: any = [];
 
   constructor(
     private dataService: DataService,

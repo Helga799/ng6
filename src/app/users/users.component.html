@@ -1,11 +1,22 @@
-<h1>Users</h1>
-<ul [@listStagger]="users">
-  <li *ngFor="let user of users">
-    <a routerLink="/details/{{user.id}}">{{user.name}}</a>
-    <ul>
-      <li>{{ user.email }}</li>
-      <li><a href="http://{{ user.website }}">{{user.website}}</a></li>
+<div>
+  <div>
+    <h1>Users</h1>
+  </div>
+  <div *ngIf="users.length === 0" class="text-center">
+    <div class="d-flex align-items-center">
+      <strong>Loading...</strong>
+      <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div *ngIf="users.length !== 0">
+    <ul [@listStagger]="users">
+      <li *ngFor="let user of users">
+        <a routerLink="/details/{{user.id}}">{{user.name}}</a>
+        <ul>
+          <li>{{ user.email }}</li>
+          <li><a href="http://{{ user.website }}">{{user.website}}</a></li>
+        </ul>
+      </li>
     </ul>
-  </li>
-</ul>
-
+  </div>
+</div>

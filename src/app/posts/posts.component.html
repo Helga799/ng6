@@ -1,8 +1,19 @@
-<h1>Posts</h1>
-
+<div>
+  <div>
+    <h1>Posts</h1>
+  </div>
+  <div *ngIf="posts.length === 0" class="text-center">
+    <div class="d-flex align-items-center">
+      <strong>Loading...</strong>
+      <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div *ngIf="posts.length !== 0">
 <ul [@listStagger]="posts">
   <li *ngFor="let post of posts">
     <a routerLink="">{{ post.title }}</a>
-    <p>{{ post.body }}</p>
-  </li>
-</ul>
+        <p>{{ post.body }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

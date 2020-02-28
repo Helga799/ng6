@@ -24,7 +24,7 @@ import { trigger,style,transition,animate,query,stagger  } from '@angular/animat
   ]
 })
 export class UsersComponent implements OnInit {
-  users: Object;
+  users: any = [];
 
   constructor(private dataService: DataService) { }
 
